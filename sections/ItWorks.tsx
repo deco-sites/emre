@@ -1,22 +1,8 @@
-import { usePartialSection } from "deco/hooks/usePartialSection.ts";
-
 export interface Props {
-  /**
-   * @format rich-text
-   * @description The description of name.
-   * @default It Works!
-   */
   name?: string;
 }
 
 export default function Section({ name = "It Works!"}: Props) {
-  /**
-   * usePartialSection is a nice hook for getting the HTMX link to render this section,
-   * but with the following Props
-   */
-  const downLink = usePartialSection({ props: { count: count - 1 } });
-  const upLink = usePartialSection({ props: { count: count + 1 } });
-
   return (
     <div
       id="it-works"
